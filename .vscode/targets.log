@@ -26,7 +26,7 @@ FIG_WORKFLOWS_KEYBIND = ^f
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/alexjones/Code/cat-cozy
+CURDIR := /Users/alexjones/Code/cats
 # makefile
 SHELL = /bin/sh
 # environment
@@ -74,7 +74,7 @@ AWS_SSH_KEY_NAME = default
 # environment
 FIG_PID = 14756
 # environment
-PWD = /Users/alexjones/Code/cat-cozy
+PWD = /Users/alexjones/Code/cats
 # environment
 HOMEBREW_CELLAR = /opt/homebrew/Cellar
 # environment
@@ -220,7 +220,7 @@ all:
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/10=10%
 #  commands to execute (from `Makefile', line 2):
-	cd pkg && docker buildx build --platform linux/amd64,linux/arm64,linux/arm . -t tibbar/cat-cozy:latest --push
+	cd pkg && docker buildx build --platform linux/amd64,linux/arm64,linux/arm . -t tibbar/cats:latest --push
 	
 
 # Not a target:
@@ -249,7 +249,7 @@ deploy:
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 4):
-	helm upgrade --install cat-cozy .
+	helm upgrade --install cats .
 	
 
 # files hash-table stats:

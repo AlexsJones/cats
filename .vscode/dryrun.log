@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/alexjones/Code/cat-cozy'
-cd pkg && docker buildx build --platform linux/amd64,linux/arm64,linux/arm . -t tibbar/cat-cozy:latest --push
-make: Leaving directory `/Users/alexjones/Code/cat-cozy'
+make: Entering directory `/Users/alexjones/Code/cats'
+cd pkg && docker buildx build --platform linux/amd64,linux/arm64,linux/arm . -t tibbar/cats:latest --push
+make: Leaving directory `/Users/alexjones/Code/cats'
  
