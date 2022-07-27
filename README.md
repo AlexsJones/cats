@@ -1,4 +1,5 @@
-# cats-demo
+# cats
 
 A very simple demo that shows cat pictures. 
-This is part of a wider example of how to use the [microk8s-community-addons repo](https://github.com/AlexsJones/microk8s-community-addons)
+
+It is a golang application, designed to work with helm to deploy on Kubernetes.
