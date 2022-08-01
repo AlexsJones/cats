@@ -4,23 +4,15 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"time"
 )
 
 var (
-	started        = time.Now()
 	Version string = "dev"
 )
 
 func health(w http.ResponseWriter, r *http.Request) {
-	duration := time.Now().Sub(started)
-	if duration.Seconds() > 10 {
-		w.WriteHeader(500)
-		w.Write([]byte(fmt.Sprintf("error: %v", duration.Seconds())))
-	} else {
-		w.WriteHeader(200)
-		w.Write([]byte("ok"))
-	}
+	w.WriteHeader(200)
+	w.Write([]byte("ok"))
 }
 
 func main() {
