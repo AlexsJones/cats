@@ -8,7 +8,8 @@ import (
 )
 
 var (
-	started = time.Now()
+	started        = time.Now()
+	Version string = "dev"
 )
 
 func health(w http.ResponseWriter, r *http.Request) {
@@ -29,6 +30,7 @@ func main() {
 	http.Handle("/healthz", http.HandlerFunc(health))
 
 	fmt.Printf("Starting server at port 8080\n")
+	fmt.Printf("Version %s\n", Version)
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatal(err)
 	}
