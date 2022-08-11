@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 )
 
 var (
@@ -11,8 +12,14 @@ var (
 )
 
 func health(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(200)
-	w.Write([]byte("ok"))
+	if os.Getenv("BAD_VALUE") != "" {
+		fmt.Printf("Bad value found, aborting.\n")
+		w.WriteHeader(500)
+		w.Write([]byte("error"))
+	} else {
+		w.WriteHeader(200)
+		w.Write([]byte("ok"))
+	}
 }
 
 func main() {

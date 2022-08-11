@@ -1,0 +1,13 @@
+{{- if .Values.failure }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cat-pv-claim
+spec:
+  storageClassName: {{ .Values.storageclass }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+{{- end }}

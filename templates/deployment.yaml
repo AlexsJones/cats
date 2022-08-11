@@ -29,11 +29,22 @@ spec:
       serviceAccountName: {{ include "cats.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+{{- if .Values.storage }}
+      volumes:
+      - name: cat-storage
+        persistentVolumeClaim:
+          claimName: cat-pv-claim
+{{- end }}
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+{{- if .Values.failure }}
+          env:
+          - name: BAD_VALUE
+            value: "exists"
+{{- end }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           livenessProbe:
             httpGet:
@@ -45,6 +56,11 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
+{{- if .Values.storage }}
+          volumeMounts:
+          - mountPath: "/usr/share/cats"
+            name: cat-storage
+{{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
