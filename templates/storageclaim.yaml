@@ -1,4 +1,4 @@
-{{- with .Values.storage }}
+{{- if .Values.storage }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:

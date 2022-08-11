@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 storage: true
-storageclass: mayastor-3
+storageclass: "mayastor-3"
 replicaCount: 1
 failure: false
 annotations:
