@@ -1,4 +1,4 @@
-{{- if .Values.failure }}
+{{- with .Values.failure }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
