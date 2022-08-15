@@ -4,7 +4,7 @@
 storage: true
 storageclass: "mayastor-3"
 replicaCount: 1
-failure: true
+failure: false
 annotations:
     app.komodor.com/app: https://github.com/AlexsJones/cats/pkg
     app.komodor.com/app.ref: 3350e3311f9520fe5e237e2d71f339029ee051d8     
