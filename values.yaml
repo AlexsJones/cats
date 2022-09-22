@@ -11,10 +11,10 @@ annotations:
     app.komodor.com/infra: https://github.com/AlexsJones/cats
     app.komodor.com/infra.ref: 32b355df32713afc511528d909eff296e91dbe74 
 image:
-  repository: cnskunkworks/cats
+  repository: ghcr.io/alexsjones/cats
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  tag: "main"
 
 imagePullSecrets: []
 nameOverride: ""
