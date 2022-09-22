@@ -1,4 +1,4 @@
-## cats
+# cats
 
 ![kitty](kitty.gif)
 
