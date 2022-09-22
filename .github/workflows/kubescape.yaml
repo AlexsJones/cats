@@ -1,0 +1,18 @@
+name: Kubescape scanning for misconfigurations
+on: [push, pull_request]
+jobs:
+  kubescape:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: kubescape/github-action@main
+    - name: Archive kubescape scan results
+      uses: actions/upload-artifact@v2
+      with:
+        name: kubescape
+        path: results.xml
+    - name: Publish Unit Test Results
+      uses: mikepenz/action-junit-report@v3
+      if: always()
+      with:
+        report_paths: "*.xml" 
