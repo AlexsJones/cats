@@ -16,3 +16,4 @@ jobs:
       if: always()
       with:
         report_paths: "*.xml" 
+        token: $TEMP_TOKEN
