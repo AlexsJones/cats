@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 storage: true
 storageclass: "mayastor-3"
-replicaCount: 1
+replicaCount: 2
 failure: false
 annotations:
     app.komodor.com/app: https://github.com/AlexsJones/cats/pkg
